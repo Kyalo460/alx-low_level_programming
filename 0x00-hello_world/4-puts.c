@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc firstCode
+gcc -c -S -E firstCode
