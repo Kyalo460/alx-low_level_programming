@@ -4,6 +4,6 @@
 int main()
 {
 	char myStr[] = "Prgramming is like bulding a multilingual puzzle\n";
-        puts(myStr);
+        puts("%s", myStr);
 	return 0;
 }   
