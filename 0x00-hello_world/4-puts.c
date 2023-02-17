@@ -2,12 +2,10 @@
 /**
   *main - Entry point
   *puts - Sends output to standard output
-  *return - returns 0 if successful
+   *return - returns 0 if successful
   */
-
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle  \n");
-	
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
