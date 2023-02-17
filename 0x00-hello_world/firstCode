@@ -1,8 +1,11 @@
-#!/bin/bash
 #include <stdio.h>
 
-int main()
-{
-	puts("Prgramming is like bulding a multilingual puzzle\n");
+/**Code that prints a line
+  *Returns 0
+  */
+
+int main(void){
+
+	puts("Programming is like bulding a multilingual puzzle\n");
 	return 0;
 }   
