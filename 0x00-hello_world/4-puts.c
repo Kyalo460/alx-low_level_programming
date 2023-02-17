@@ -2,7 +2,7 @@
 /**
   *main - Entry point
   *puts - Sends output to standard output
-   *return - returns 0 if successful
+   *Return: Always 0 (Success)
   */
 int main(void)
 {
