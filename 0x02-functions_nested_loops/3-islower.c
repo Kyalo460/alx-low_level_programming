@@ -1,8 +1,8 @@
 #include "main.h"
 /**
   *_islower - Looks if a char is lowercase
-  *
-  *Return: Always 0 (Success)
+  *@c: The character to be chacked
+  *Return: 1 if the character is lower case, 0 otherwise
   */
 int _islower(int c)
 {
