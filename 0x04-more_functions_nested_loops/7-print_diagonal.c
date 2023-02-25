@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
   * print_diagonal - Draws a diagonal line using the \ character.
@@ -15,10 +15,11 @@ void print_diagonal(int n)
 			for (space = 0; space < len; space++)
 				_putchar(' ');
 			_putchar('\\');
+
 			if (len == n - 1)
 				continue;
-			_putchar('\n');
-								
+
+			_putchar('\n');					
 		}
 	}
 	_putchar('\n');
