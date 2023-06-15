@@ -1,2 +1,2 @@
 #!/bin/bash
-$CFILE | tr 'c' 's' | gcc -c $CFILE -o $CFILE
+gcc -c 2-main.c -o 2-main.s
