@@ -1,3 +1,4 @@
+#include<string.h>
 #include<unistd.h>
 /**
   *main - entry point for code
