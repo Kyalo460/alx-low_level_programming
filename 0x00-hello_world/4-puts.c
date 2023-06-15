@@ -8,7 +8,7 @@ int main(void)
 {
 	char firstString[] = "\"Programming is like building a multilingual puzzle";
 
-	puts(fisrtString);
+	puts(firstString);
 
 	return (0);
 }
