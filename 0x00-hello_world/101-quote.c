@@ -5,7 +5,9 @@
   */
 int main(void)
 {
-	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	write(STDERR_FILENO, message, sizeof(message) -1);
+	char *line1 = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	write(2, line1, strlen(line1));
+
 	return (1);
 }
