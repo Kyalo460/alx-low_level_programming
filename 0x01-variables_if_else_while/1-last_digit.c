@@ -29,7 +29,7 @@ int main(void)
 		printf("Last digit of %d is 0 and is 0", n);
 	}
 	/*Positive numbers*/
-	else
+	else if (n > 0)
 	{
 		lastdig = (n % 10);
 
