@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
   *print_alphabet - A program that prints the alphabet in lowercase
   *_putchar - puts a the char c to stdout
