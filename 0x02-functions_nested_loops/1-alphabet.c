@@ -1,10 +1,15 @@
 #include "main.h"
 /**
-  *main - prints the alphabets in small leters
-  *Return: 0 (Success)
+  *print_alphabet - A program that prints the alphabet in lowercase
+  *_putchar - puts a the char c to stdout
   */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char letter;
+
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		_putchar(letter);
+	}
+	_putchar('\n');
 }
