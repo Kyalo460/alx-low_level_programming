@@ -1,7 +1,7 @@
 #include "main.h"
 /**
   *_abs - prints the absolute vaue of an integer
-  *@int: expects integer
+  *@digit: expects integer
   *Return: 0 (success)
   */
 int _abs(int digit)
