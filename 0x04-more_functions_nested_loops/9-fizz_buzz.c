@@ -4,6 +4,7 @@
   *Fizz if it is divisible by 3
   *Buzz if it is divisible by 5
   *FizzBuzz if it is diviscible by both
+  *Return: 0 success
   */
 int main() 
 {
