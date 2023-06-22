@@ -1,7 +1,8 @@
 #include "main.h"
 /**
   *_isupper - A function that checks if a letter is uppercase
-  *@c - expects an int datatype
+  *@c: expects an int datatype
+  *Return: 1 if true and 0 if false
   */
 int _isupper(int c)
 {
