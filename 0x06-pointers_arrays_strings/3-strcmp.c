@@ -3,7 +3,6 @@
   *_strcmp - compares two strings
   *@s1: the first string
   *@s2: the second string
-  *@i: index
   *Return: returns 0 is strings are the same
   */
 int _strcmp(char *s1, char *s2)
