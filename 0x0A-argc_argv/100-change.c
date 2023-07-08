@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+  *coins - determines the least amounts of coins needed
+  *@cents: amount of change to be given back
+  *Return: amount of coins needed
+  */
 int coins(int cents)
 {
 	int n = 0;
@@ -40,7 +44,10 @@ int coins(int cents)
 	return (n);
 }
 /**
-  *
+  *main - determines amount of coins to give
+  *@argc: argument count
+  *@argv: argument vector
+  *Return: (0) successful execution
   */
 int main(int argc, char *argv[])
 {
@@ -50,7 +57,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return(1);
+		return (1);
 	}
 	cents = atoi(argv[1]);
 	num_coins = coins(cents);
