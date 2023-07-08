@@ -7,41 +7,18 @@
   */
 int coins(int cents)
 {
-	int n = 0;
+	int i = 0, total = 0;  /* i for index */
+	int n[5] = {25, 10, 5, 2, 1};
 
-	if (cents == 0)
+	for (; i < 5 && cents > 0; i++)
 	{
-		return (n);
-	}
-	else
-	{
-		if (cents >= 25)
+		while (cents >= n[i])
 		{
-			cents -= 25;
-			n = 1 + coins(cents);
-		}
-		else if (cents >= 10)
-		{
-			cents -= 10;
-			n = 1 + coins(cents);
-		}
-		else if (cents >= 5)
-		{
-			cents -= 5;
-			n = 1 + coins(cents);
-		}
-		else if (cents >= 2)
-		{
-			cents -= 2;
-			n = 1 + coins(cents);
-		}
-		else if (cents == 1)
-		{
-			cents--;
-			n = 1 + coins(cents);
+			cents -= n[i];
+			total++;
 		}
 	}
-	return (n);
+	return (total);
 }
 /**
   *main - determines amount of coins to give
