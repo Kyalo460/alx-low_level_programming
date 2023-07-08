@@ -11,7 +11,9 @@ bool check_num(char *str)
 {
 	while (*str != 0)
 	{
-		if (!isdigit(*str++))
+		if (*str == '-')
+			return (true);
+		else if (!isdigit(*str++))
 			return (false);
 		else
 			return (true);
