@@ -9,17 +9,15 @@
   */
 bool check_num(char *str)
 {
+	if (str[0] == '-')
+		str++;
 	while (*str != 0)
 	{
-		if (*str == '-')
-			return (true);
-		else if (!isdigit(*str++))
+		if (!isdigit(*str++))
 			return (false);
-		else
-			return (true);
 	}
 
-	return (0);
+	return (true);
 
 }
 
