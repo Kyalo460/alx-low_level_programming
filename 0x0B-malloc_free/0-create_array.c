@@ -5,18 +5,19 @@
   *@size: amount of characters to account for
   *@c: a character
   *Return: returns a pointer to the memory location if successful
+  *        and NULL if it fails
   */
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	char *arr;
 
 	if (size == 0)
 		return (NULL);
 
-	arr = malloc(sizeof(c) * size);
+	arr = malloc(sizeof(char) * size);
 
-	while (i <= size)
+	while (i < size)
 	{
 		arr[i] = c;
 		i++;
