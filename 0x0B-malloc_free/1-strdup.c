@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
   *_strdup - returns the memory location of a duplicate string
@@ -10,7 +11,7 @@ char *_strdup(char *str)
 {
 	char *ptr_str;
 	unsigned int size;
-	unsigned int i = 0;
+	unsigned int i;
 
 	if (str == NULL)
 		return (NULL);
@@ -23,15 +24,17 @@ char *_strdup(char *str)
 	str -= size;
 	size++;
 
-	ptr_str = malloc(sizeof(char) * size);
+	if (size == 0)
+		return (NULL);
+
+	ptr_str = malloc(sizeof(*str) * size);
 
 	if (ptr_str == NULL)
 		return (NULL);
 
-	while (i < size)
+	for (i = 0; i < size; i++)
 	{
 		ptr_str[i] = str[i];
-		i++;
 	}
 	return (ptr_str);
 }
