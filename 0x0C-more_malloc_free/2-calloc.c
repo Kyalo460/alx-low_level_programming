@@ -10,16 +10,19 @@
   */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	void *memory;
 	char *arr;
 	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	arr = malloc(nmemb * size);
+	memory = malloc(nmemb * size);
 
-	if (arr == NULL)
+	if (memory == NULL)
 		return (NULL);
+
+	arr = memory;
 
 	for (index = 0; index < nmemb; index++)
 		arr[index] = '\0';
