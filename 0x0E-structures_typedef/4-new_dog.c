@@ -11,9 +11,9 @@ char *_strcopy(char *dest, char *src);
   */
 int _strlen(char *str)
 {
-	int len = 0, index;
+	int len = 0;
 
-	for (index = 0; str[index]; index++)
+	while (str[len] != '\0')
 		len++;
 
 	return (len);
@@ -27,9 +27,12 @@ int _strlen(char *str)
   */
 char *_strcopy(char *dest, char *src)
 {
-	int index;
+	int index, len = 0;
 
-	for (index = 0; src[index]; index++)
+	while(src[len] != '\0')
+		len++;
+
+	for (index = 0; index < len; index++)
 		dest[index] = src[index];
 
 	dest[index] = '\0';
