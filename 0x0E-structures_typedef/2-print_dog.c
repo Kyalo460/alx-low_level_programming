@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
   *print_dog - prints the contents of an object in a certain format
   *@d: pointer to object location
