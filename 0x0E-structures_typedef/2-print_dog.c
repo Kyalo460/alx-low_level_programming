@@ -3,7 +3,7 @@
 #include <stdlib.h>
 /**
   *print_dog - prints the contents of an object in a certain format
-  *@d: pointer to object location
+  *@d: pointer to instance
   */
 void print_dog(struct dog *d)
 {
@@ -11,10 +11,17 @@ void print_dog(struct dog *d)
 		return;
 
 	if ((*d).name == NULL)
-		(*d).name = "(nil)";
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", d->name);
+
+	if (d->age < 0)
+		printf("Age: (nil)\n");
+	else
+		printf("Age: %f\n", d->age);
 
 	if (d->owner == NULL)
-		d->owner = "(nil)";
-
-	printf("Name: %s\nAge: %d\nOwner: %s\n", d->name, d->age, d->owner);
+		printf("Owner: (nil)\n");
+	else
+		printf("Owner: %s\n", d->owner);
 }
