@@ -1,7 +1,7 @@
 #ifndef FUNCTION_POINTERS
 #define FUNCTION_POINTERS
 /**
-  *Desc: will contain function prototypes
+  *function_pointers.h - will contain function prototypes
   */
 #include <stdlib.h>
 
