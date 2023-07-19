@@ -2,6 +2,8 @@
 #define FUNCTION_POINTERS
 /**
   *function_pointers.h - will contain function prototypes
+  *@name: array
+  *@f: pointer to a function
   */
 #include <stdlib.h>
 
