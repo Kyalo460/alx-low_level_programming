@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "lists.h"
 /**
-  *print_list - Prints the a linked list
+  *print_list - Prints the linked list
   *@h: pointer to start of list
   *
-  *return: number of nodes in linked list
+  *Return: number of nodes in linked list
   */
 size_t print_list(const list_t *h)
 {
@@ -17,10 +17,10 @@ size_t print_list(const list_t *h)
 
 		else
 			printf("[%d] %s\n", h->len, h->str);
-		
+
 		nodes++;
 		h = h->next;
 	}
 
-	return(nodes);
+	return (nodes);
 }
