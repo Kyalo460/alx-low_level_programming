@@ -8,7 +8,7 @@
   */
 list_t *add_node(list_t **head, const char *str)
 {
-	char *duplicate = strdup(str);
+	char *duplicate;
 	list_t *new;
 	int len = 0;
 
@@ -16,11 +16,12 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 		return (NULL);
 
-	if (duplicate == NULL)
+	if (str == NULL)
 	{
 		free(new);
 		return (NULL);
 	}
+	duplicate = strdup(str);
 
 	while (duplicate[len])
 		len++;
