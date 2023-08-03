@@ -31,12 +31,12 @@ unsigned int binary_to_uint(const char *b)
 
 	int binary;
 
+	if (b == NULL)
+		return (0);
+
 	while (b[index])
 		index++;
 	index--;
-
-	if (b == NULL)
-		return (0);
 
 	for (; b[index]; index--)
 	{
