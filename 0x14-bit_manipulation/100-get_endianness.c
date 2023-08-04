@@ -1,6 +1,8 @@
 #include "main.h"
 /**
-  *get_endianness - checks if machine uses Big Endian of Litte Endian
+  *get_endianness - checks if machine uses Big Endian of Litte Endian\
+  *
+  *Return: returns 0 if Big Endian || 1 if Litte Endian
   */
 int get_endianness(void)
 {
