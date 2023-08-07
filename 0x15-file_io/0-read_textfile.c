@@ -8,31 +8,28 @@
   */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *ptr;
-	char ch;
-	ssize_t sum = 0;
+	char *content;
+	ssize_t w, o, r;
 
 	if (filename == NULL)
 		return (0);
 
-	ptr = fopen(filename, "r");
-
-	if (ptr == NULL)
+	content = malloc(sizeof(char) * letters);
+	if (content == NULL)
 		return (0);
 
-	while (letters != 0)
+	o = open(filename, O_RDONLY);
+	r = read(o, content, letters);
+	w = write(STDOUT_FILENO, content, r);
+
+	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
-		ch = fgetc(ptr);
-		write(1, &ch, 1);
-
-		if (ch == EOF)
-		{
-			sum--;
-			return (sum);
-		}
-		sum++;
-		letters--;
+		free(content);
+		return (0);
 	}
+	
+	free (content);
+	close(o);
 
-	return (sum);
+	return (w);
 }
