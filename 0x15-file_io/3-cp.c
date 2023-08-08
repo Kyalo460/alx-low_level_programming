@@ -53,14 +53,18 @@ int copy(const char *original, char *duplicate)
 	o1 = open(original, O_RDONLY);
 	o2 = open(duplicate, O_TRUNC | O_WRONLY | O_CREAT, 0664);
 	r = read(o1, buffer, 1024);
+	do {
+		if (o1 < 0 || r < 0)
+			return (98);
 
-	if (o1 < 0 || r < 0)
-		return (98);
+		w = write(o2, buffer, r);
 
-	w = write(o2, buffer, r);
+		if (o2 < 0 || w < 0)
+			return (99);
 
-	if (o2 < 0 || w < 0)
-		return (99);
+		r = read(o1, buffer, 1024);
+		o2 = open(duplicate, O_WRONLY | O_APPEND);
+	} while (r > 0);
 
 	c1 = close(o1);
 	c2 = close(o2);
