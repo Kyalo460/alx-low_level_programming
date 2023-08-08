@@ -24,12 +24,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (n == 99)
+	else if (n == 99)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	if (n != 0)
+	else if (n > 0)
 	{
 		dprintf(2, "Can't close fd %d", n);
 		exit(100);
@@ -68,12 +68,12 @@ int copy(const char *original, char *duplicate)
 
 	c1 = close(o1);
 	c2 = close(o2);
+	free(buffer);
 
-	if (c1 < 0)
+	if (c1 == -1)
 		return (o1);
-	if (c2 < 0)
+	if (c2 == -1)
 		return (o2);
 
-	free(buffer);
 	return (0);
 }
