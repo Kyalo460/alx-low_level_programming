@@ -20,18 +20,18 @@ int main(int argc, char *argv[])
 
 	if (n == 98)
 	{
-		dprintf(2, "Error: Can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
 		exit(98);
 	}
 
 	else if (n == 99)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	else if (n > 0)
 	{
-		dprintf(2, "Can't close fd %d", n);
+		dprintf(STDERR_FILENO, "Can't close fd %d", n);
 		exit(100);
 	}
 	return (0);
@@ -54,12 +54,12 @@ int copy(const char *original, char *duplicate)
 	o2 = open(duplicate, O_TRUNC | O_WRONLY | O_CREAT, 0664);
 	r = read(o1, buffer, 1024);
 	do {
-		if (o1 < 0 || r < 0)
+		if (o1 == -1 || r == -1)
 			return (98);
 
 		w = write(o2, buffer, r);
 
-		if (o2 < 0 || w < 0)
+		if (o2 == -1 || w == -1)
 			return (99);
 
 		r = read(o1, buffer, 1024);
