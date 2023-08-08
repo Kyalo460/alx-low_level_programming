@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-I
+
 	n = copy(argv[1], argv[2]);
 
 	if (n == 98)
