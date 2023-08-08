@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
+I
 	n = copy(argv[1], argv[2]);
 
 	if (n == 98)
@@ -49,6 +49,8 @@ int copy(const char *original, char *duplicate)
 	char *buffer;
 
 	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
+		return (99);
 
 	o1 = open(original, O_RDONLY);
 	o2 = open(duplicate, O_TRUNC | O_WRONLY | O_CREAT, 0664);
