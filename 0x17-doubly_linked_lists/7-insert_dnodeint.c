@@ -10,7 +10,6 @@
   */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *previous;
 	dlistint_t *current = *h;
 	dlistint_t *new;
 	size_t num = 0;
@@ -18,13 +17,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (h == NULL)
 		return (NULL);
 
-	while (current && num < idx)
+	while (current->next && num < idx)
 	{
-		previous = current;
 		current = current->next;
 		num++;
 	}
 
+	printf("%lu\n\n", num);
 	if (num != idx)
 		return (NULL);
 
@@ -33,9 +32,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	new->n = n;
-	new->next = previous->next;
-	previous->next = new;
-	new->prev = previous;
+	new->next = current;
+	(current->prev)->next = new;
+	new->prev = current->prev;
 
 	if (current != NULL)
 		current->prev = new;
