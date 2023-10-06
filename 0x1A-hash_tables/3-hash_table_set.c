@@ -16,16 +16,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index, size = 1024;
 	hash_node_t *current, *new_node;
 
-	if (strcmp(key, "") == 0 || ht == NULL || key == NULL || value == NULL)
+	if (strcmp(key, "") == 0 || ht == NULL || key == NULL)
 		return (0);
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
 
+	printf("Here");
 	index = key_index((unsigned char *)key, size);
 	new_node->key = strdup(key);
-	new_node->value = strdup(value);
+	new_node->value = value ? strdup(value) : NULL;
 
 	if (ht->array[index] == NULL)
 	{
@@ -40,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			if (strcmp(current->key, new_node->key) == 0)
 			{
 				free(current->value);
-				current->value = strdup(new_node->value);
+				current->value = value ? strdup(new_node->value) : NULL;
 				free(new_node->key);
 				free(new_node->value);
 				free(new_node);
