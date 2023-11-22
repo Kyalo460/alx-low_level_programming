@@ -9,13 +9,18 @@ def island_perimeter(grid):
     1 means it's part of an island and 0 the opposite.
     """
 
-    perimeter = 0;
+    perimeter = 0
     exists = False
-    
-    for row in grid:
-        for column in row:
-            if column == 1:
-                if exists == False:
+
+    for row in range(0, 5):
+        for column in range(0, 6):
+            if grid[row][column] == 1:
+                if row != 0 and column != 0:
+                    if grid[row][column] == grid[(row - 1)][column]:
+                        if grid[row][column] == grid[row][(column - 1)]:
+                            continue
+
+                if exists is False:
                     exists = True
                     perimeter = 4
                 else:
