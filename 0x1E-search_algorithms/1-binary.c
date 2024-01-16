@@ -5,7 +5,7 @@
  * @array: a pointer to the array
  * @size: the size of the array
  * @value: the value we are looking for
- * 
+ *
  * Return: returns the index of the value if found
  *         return -1 if not found
 */
@@ -29,7 +29,7 @@ int binary_search(int *array, size_t size, int value)
 			printf("\n");
 			if (value > array[mid])
 				start = mid + 1;
-			
+
 			else if (value < array[mid])
 				end = mid - 1;
 

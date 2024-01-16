@@ -8,15 +8,16 @@
  * @value: value to search for
  *
  * Return: first index where value is located, or -1 if value is not present
- * in array or if array is NULL
+ *         in array or if array is NULL
 */
 
 int linear_search(int *array, size_t size, int value)
 {
 	size_t index = 0;
+
 	if (size > 1)
 	{
-		while(index < size)
+		while (index < size)
 		{
 			printf("Value checked array[%ld] = [%i]\n", index, array[index]);
 			if (array[index] == value)
